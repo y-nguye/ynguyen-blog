@@ -1,0 +1,19 @@
+<?php get_header(); ?>
+
+<h1 class="mt-4"><?php the_title() ?></h1>
+<article class="content fs-5 mt-4">
+    <?php
+    if (have_posts()) {
+        while (have_posts()) {
+            the_post();
+            // Đối số thứ nhất: Tìm file theo đường dẫn
+            // Đối số thứ hai: gán hậu tố vào tên file sau dấu gạch nối
+            // Điều này giúp cho module hoá dự án: Thời gian, tên tác giả, nội dung,...
+            get_template_part('template-parts/content', 'archive');
+        }
+    }
+    the_posts_pagination();
+    ?>
+</article>
+
+<?php get_footer(); ?>
