@@ -2,11 +2,15 @@
     <hr>
     <div class="d-flex align-items-center">
         <?php if (has_post_thumbnail()) : ?>
-            <img class="img-mini me-4 rounded" src="<?php the_post_thumbnail_url(); ?>" alt="thumbnail">
+            <a href="<?php the_permalink(); ?>">
+                <img class="img-mini rounded" src="<?php the_post_thumbnail_url(); ?>" alt="thumbnail">
+            </a>
         <?php else : ?>
-            <img class="img-mini me-4 rounded border" src="<?= get_template_directory_uri() . '/assets/img/no-image.png' ?>" alt="thumbnail">
+            <a href="<?php the_permalink(); ?>">
+                <img class="img-mini rounded border" src="<?= get_template_directory_uri() . '/assets/img/no-image.png' ?>" alt="thumbnail">
+            </a>
         <?php endif; ?>
-        <div class="contents">
+        <div class="contents ms-4">
             <h4 class="archive-title fs-4 mb-0"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
             <div class="meta">
                 <span class="date fs-6"><?php the_time('j F, Y'); ?></span>

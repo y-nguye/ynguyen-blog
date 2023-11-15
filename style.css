@@ -8,6 +8,31 @@ Author: Nguyễn Hoài Ý
 Author URI: https://www.facebook.com/profile.php?id=100008423531575
 */
 
+@media (min-width: 768px) {
+    .nguyen-y,
+    .footer-widget {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .nguyen-y {
+        text-align: right;
+    }
+}
+
+@media (max-width: 767px) {
+    .sidebar {
+        display: none;
+    }
+
+    .footer-widget {
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+    .nguyen-y {
+        padding-bottom: 10px;
+    }
+}
+
 :root {
     --font-family: 'Cormorant', serif;
 
@@ -37,6 +62,16 @@ Author URI: https://www.facebook.com/profile.php?id=100008423531575
 
 body {
     font-family: var(--font-family);
+
+    /* Đảy footer xuống dưới cùng */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    flex: 1;
 }
 
 a {
@@ -56,6 +91,7 @@ hr {
 
 .archive-title a:hover {
     text-decoration: underline;
+    text-decoration-thickness: 1px;
 }
 
 .img-mini {
@@ -69,10 +105,6 @@ hr {
 }
 .contents :nth-child(n) {
     text-align: justify;
-}
-
-.comments-header {
-    font-weight: 700;
 }
 
 .meta {
@@ -98,4 +130,104 @@ hr {
 }
 .meta span:last-child:after {
     display: none;
+}
+
+.comments-header {
+    font-weight: 700;
+}
+
+.sidebar {
+    list-style-type: none;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ------------------- Overwrite container bootstrap ------------------- */
+@media (min-width: 1400px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 960px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 960px !important;
+    }
+}
+
+/* Khi NavBar bình thường */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    .dropdown-toggle-split {
+        display: none;
+    }
+}
+
+/* Khi NavBar thu gọn */
+@media (max-width: 991px) {
+    .dropdown > .nav-link,
+    .dropdown-toggle-split {
+        display: inline;
+    }
+
+    .dropdown-toggle-split {
+        padding-left: 10px;
+    }
+
+    .dropdown-menu > li > a {
+        padding-left: 10px;
+    }
+}
+
+.dropdown-toggle-split,
+.navbar-toggler {
+    border: 0px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.nav-link {
+    font-weight: 900;
+}
+
+.bg-light {
+    background-color: white !important;
+}
+
+.dropdown-menu {
+    padding: 0;
+    overflow: hidden;
+}
+
+.dropdown-menu a:active {
+    background-color: var(--lightgray); /* Màu nền khi click */
+}
+
+.img-fluid {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.link-secondary:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
 }

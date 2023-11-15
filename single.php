@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <h1 class="mt-4"><?php the_title() ?></h1>
 <article class="content fs-5">
     <?php
@@ -13,6 +14,5 @@
     }
     ?>
 </article>
-</div>
 
 <?php get_footer(); ?>

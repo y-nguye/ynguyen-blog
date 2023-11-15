@@ -8,14 +8,9 @@
         </div>
     </header>
 
-
     <div class="contents">
-        <?php
-        the_content();
-        ?>
+        <?php the_content(); ?>
     </div>
 
-    <?php
-    comments_template()
-    ?>
+    <?php comments_template(); ?>
 </div>

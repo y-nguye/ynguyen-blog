@@ -28,7 +28,6 @@ function y_register_styles()
 {
     $version = wp_get_theme()->get('Version');
     wp_enqueue_style('y-style', get_template_directory_uri() . "/style.css", array('y-bootstrap'), $version, 'all'); // array: ghi đè (override) y-bootstrap
-    wp_enqueue_style('y-style-custom', get_template_directory_uri() . "/assets/css/style-custom.css", array('y-bootstrap'), $version, 'all'); // array: ghi đè (override) y-bootstrap
     wp_enqueue_style('y-bootstrap', "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css", array(), '5.3.2', 'all');
     wp_enqueue_style('y-bootstrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css", array(), '1.11.1', 'all');
     wp_enqueue_style('y-bootstrap-gg-font', "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap", array(), '', 'all');
@@ -59,22 +58,34 @@ function y_widget_areas()
             'after_widget' => '</div>',
         ]
     );
+
+    register_sidebar(
+        [
+            'name' => 'Header SideBar Widget',
+            'id' => 'header-sidebar-widget',
+            'description' => 'Widget Area',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+        ]
+    );
+
+    register_sidebar(
+        [
+            'name' => 'Footer Widget',
+            'id' => 'footer-widget',
+            'description' => 'Widget Area',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>',
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+        ]
+    );
 }
 
 add_action('widgets_init', 'y_widget_areas');
 
-
-add_shortcode('my_cat_list', 'my_list_categories_shortcode');
-
-/**
- * this function outputs your category list where you
- * use the [my_cat_list] shortcode.
- */
-function my_list_categories_shortcode()
-{
-    $args = array('echo' => false);
-    return wp_list_categories($args);
-}
 
 function has_child_category_by_name($category_name)
 {

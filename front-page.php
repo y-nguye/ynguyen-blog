@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <div class="mt-4">
     <?php dynamic_sidebar('home-page-title-widget'); ?>
 </div>
