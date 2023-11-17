@@ -15,7 +15,7 @@
             <div class="meta">
                 <span class="date fs-6"><?php the_time('j F, Y'); ?></span>
                 <?php if (comments_open()) : ?>
-                    <span class="comment fs-6"><i class="bi bi-dot align-middle"> </i><?php comments_number(); ?></span>
+                    <span class="fs-6"><i class="bi bi-dot align-middle"> </i><?php comments_number(); ?></span>
                 <?php endif; ?>
             </div>
         </div>

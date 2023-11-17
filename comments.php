@@ -1,23 +1,10 @@
 <?php if (comments_open()) : ?>
     <div class="comments-wraper mt-5">
-        <hr />
-        <div class="comments-header fs-4">
-            <div class="mb-3">
-                <?php
-                if (!have_comments()) {
-                    echo "Hãy để lại bình luận của bạn!";
-                } else {
-                    echo get_comments_number() . " bình luận";
-                }
-                ?>
-            </div>
-        </div>
-
         <div class="comments-inner">
             <?php
             wp_list_comments(
                 [
-                    'avatar_size' => 120,
+                    'avatar_size' => 50,
                     'style' => 'div',
                 ]
             );
@@ -29,8 +16,29 @@
             comment_form(
                 [
                     'class_form' => '',
-                    'title_reply_before' => '<h5>',
-                    'title_reply_after' => '</h5>',
+                    'logged_in_as' => '',
+
+                    'title_reply_before' => '<h2 class="pt-3">',
+                    'title_reply' => 'Bình luận',
+                    'title_reply_after' => '</h2>',
+
+                    'comment_notes_before' => '',
+                    'comment_notes_after' => '',
+
+                    'comment_field' => '<div class="form-group pb-4"><textarea name="comment" id="comment" cols="20" rows="5" class="form-control"></textarea></div>',
+                    'comment_field_before' => '<div class="form-group">',
+                    'comment_field_after' => '</div>',
+                    'fields' => [
+                        'author' => '<div class="row mb-3"><div class="col-md-4"><input class="form-control mb-2" placeholder="Tên *"></div>',
+                        'email' => '<div class="col-md-4"><input class="form-control mb-2" placeholder="Email *"></div>',
+                        'url' => '<div class="col-md-4"><input class="form-control mb-2" placeholder="Trang web"></div></div>',
+                    ],
+
+                    'cancel_reply_before' => '<div class="fs-5 mt-2">',
+                    'cancel_reply_after' => '</div>',
+
+                    'label_submit' => 'Gửi bình luận',
+                    'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="btn btn-primary float-end %3$s" value="%4$s" />'
                 ]
             );
         }

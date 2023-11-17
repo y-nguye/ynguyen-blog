@@ -1,5 +1,7 @@
 <?php
 
+add_action('after_setup_theme', 'y_theme_support');
+
 function y_theme_support()
 {
     // Thêm tiêu đề động cho trang
@@ -8,8 +10,8 @@ function y_theme_support()
     add_theme_support('post-thumbnails');
 }
 
-add_action('after_setup_theme', 'y_theme_support');
 
+add_action('init', 'y_menus');
 
 function y_menus()
 {
@@ -21,8 +23,8 @@ function y_menus()
     register_nav_menus($locations);
 }
 
-add_action('init', 'y_menus');
 
+add_action('wp_enqueue_scripts', 'y_register_styles');
 
 function y_register_styles()
 {
@@ -33,17 +35,21 @@ function y_register_styles()
     wp_enqueue_style('y-bootstrap-gg-font', "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap", array(), '', 'all');
 }
 
-add_action('wp_enqueue_scripts', 'y_register_styles');
-
-
-function y_register_scripts()
-{
-    wp_enqueue_script('y-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js', array(), '5.3.2', true);
-    wp_enqueue_script('y-main', get_template_directory_uri() . "/assets/js/main.js", array('y-bootstrap'), '1.0', 'all');
-}
 
 add_action('wp_enqueue_scripts', 'y_register_scripts');
 
+function y_register_scripts()
+{
+    $version = wp_get_theme()->get('Version');
+    wp_enqueue_script('y-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js', array(), '5.3.2', true);
+    wp_enqueue_script('y-main', get_template_directory_uri() . "/assets/js/main.js", array('y-bootstrap'), $version, 'all');
+    wp_enqueue_script('y-header', get_template_directory_uri() . "/assets/js/header.js", array('y-main'), $version, 'all');
+    wp_enqueue_script('y-sidebar', get_template_directory_uri() . "/assets/js/sidebar.js", array('y-main'), $version, 'all');
+    wp_enqueue_script('y-dark-theme', get_template_directory_uri() . "/assets/js/darkTheme.js", array('y-main'), $version, 'all');
+}
+
+
+add_action('widgets_init', 'y_widget_areas');
 
 function y_widget_areas()
 {
@@ -84,7 +90,22 @@ function y_widget_areas()
     );
 }
 
-add_action('widgets_init', 'y_widget_areas');
+
+add_filter('comment_form_fields', 'add_custom_comment_fields_classes');
+
+function add_custom_comment_fields_classes($fields)
+{
+    // $fields['comment'] = str_replace('textarea', 'textarea class="form-control"', $fields['comment']);
+    // $fields['author'] = str_replace('input', 'input class="form-control"', $fields['author']);
+    // $fields['email'] = str_replace('input', 'input class="form-control"', $fields['email']);
+    // $fields['url'] = str_replace('input', 'input class="form-control"', $fields['url']);
+
+    $fields['cookies'] = str_replace('<p class="comment-form-cookies-consent">', '<p class="comment-form-cookies-consent mb-4 form-check">', $fields['cookies']);
+    $fields['cookies'] = str_replace('input', 'input class="form-check-input"', $fields['cookies']);
+    $fields['cookies'] = str_replace('label', 'label class="form-check-label"', $fields['cookies']);
+
+    return $fields;
+}
 
 
 function has_child_category_by_name($category_name)
