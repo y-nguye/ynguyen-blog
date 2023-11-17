@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-<article class="content fs-5">
+<article class="content mt-4 fs-5">
     <h1>Page Not Found</h1>
-    <?php get_search_form(); ?>
+    <div class="p">Xin lỗi, không thể tìm thấy trang bạn đang tìm kiếm</div>
 </article>
 
 <?php get_footer(); ?>

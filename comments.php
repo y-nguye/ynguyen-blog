@@ -5,7 +5,7 @@
             <div class="mb-3">
                 <?php
                 if (!have_comments()) {
-                    echo "Hãy là người đầu tiên bình luận nào!";
+                    echo "Hãy để lại bình luận của bạn!";
                 } else {
                     echo get_comments_number() . " bình luận";
                 }

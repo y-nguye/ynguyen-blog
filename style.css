@@ -1,7 +1,7 @@
 /* 
 Theme Name: ynguyen-blog
 Text Domain
-Version: 1.0
+Version: 1.1
 Description: Giao diện tự tạo của tôi
 Tags: simple, right-sidebar, responsive
 Author: Nguyễn Hoài Ý
@@ -37,34 +37,25 @@ Author URI: https://www.facebook.com/profile.php?id=100008423531575
     --font-family: 'Cormorant', serif;
 
     --blue: #007bff;
-    --indigo: #6610f2;
-    --purple: #6f42c1;
-    --pink: #ee3577;
-    --red: #dc3545;
-    --orange: #f68e62;
-    --yellow: #ffc107;
-    --green: #28a745;
-    --teal: #20c997;
-    --cyan: #17a2b8;
     --white: #fff;
     --gray: #767575;
-    --gray-dark: #434242;
-    --primary: #6f42c1;
-    --secondary: #4f4f4f;
-    --success: #28a745;
-    --info: #17a2b8;
-    --warning: #ffc107;
-    --danger: #dc3545;
     --light: #c2c2c2;
-    --lightgray: #eeeeee;
-    --dark: #434242;
+    --light-gray: #eeeeee;
+    --dark: #1c2128;
+    --dark-gray: #444c56;
+    --secondary: #4f4f4f;
+
+    --text-light: #1d2327;
+    --text-dark: #bdc9d4;
+    --text-dark-hover: #dce7f3;
+    --text-dark-deep: #8e9aa7;
 }
 
 body {
     font-family: var(--font-family);
 
+    display: none;
     /* Đảy footer xuống dưới cùng */
-    display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
@@ -72,6 +63,7 @@ body {
 
 main {
     flex: 1;
+    transition: background-color 0.5s ease;
 }
 
 a {
@@ -80,7 +72,7 @@ a {
 }
 
 hr {
-    color: var(--light);
+    color: var(--dark);
 }
 
 .logo {
@@ -119,7 +111,7 @@ hr {
     color: #8f8f8f;
 }
 .meta .tag {
-    background-color: var(--lightgray);
+    background-color: var(--light-gray);
     padding: 0 0.5em;
     border-radius: 5px;
 }
@@ -140,8 +132,75 @@ hr {
     list-style-type: none;
 }
 
+footer {
+    background-color: var(--light-gray);
+    transition: background-color 0.5s ease, border-top 0.5s ease;
+}
 footer p {
     margin: 0;
+}
+
+/* ---------- Dark-mode ---------- */
+.appearance-btn,
+.appearance-btn:active {
+    border: 0px;
+}
+
+.dark-mode {
+    background-color: var(--dark);
+}
+.dark-mode h1,
+.dark-mode ol,
+.dark-mode p,
+.dark-mode div,
+.dark-mode hr,
+.dark-mode a,
+.dark-mode li > button {
+    color: var(--text-dark);
+}
+.dark-mode a:hover {
+    color: var(--text-dark-hover);
+}
+
+/* Header */
+.dark-mode .navbar {
+    border-bottom: 1px solid var(--dark-gray) !important;
+    background-color: var(--dark) !important;
+}
+.dark-mode .navbar-toggler {
+    color: var(--text-dark);
+}
+.dark-mode .dropdown-menu {
+    border: 1px solid var(--dark-gray) !important;
+    background-color: var(--dark);
+}
+.dark-mode .dropdown-menu a:hover {
+    background-color: var(--dark-gray);
+}
+
+/* Meta post */
+.dark-mode .meta .date {
+    color: var(--text-dark-deep);
+}
+.dark-mode .meta .tag a {
+    color: var(--text-dark);
+}
+.dark-mode .meta .tag {
+    background-color: var(--dark-gray);
+}
+.dark-mode .meta .tag:hover,
+.dark-mode .meta .tag:hover a {
+    color: var(--text-dark-hover);
+}
+
+/* Sidebar */
+.dark-mode .sidebar .link-secondary {
+    color: var(--text-dark-deep) !important;
+}
+
+/* Footer */
+.dark-mode.footer {
+    border-top: 1px solid var(--dark-gray) !important;
 }
 
 /* ------------------- Overwrite container bootstrap ------------------- */
@@ -178,6 +237,20 @@ footer p {
 
 /* Khi NavBar thu gọn */
 @media (max-width: 991px) {
+    .navbar {
+        font-size: 30px;
+    }
+    .navbar ul a {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .navbar-toggler-appearance-btn {
+        font-size: 20px;
+    }
+    .navbar-toggler-btn {
+        font-size: 30px;
+    }
+
     .dropdown > .nav-link,
     .dropdown-toggle-split {
         display: inline;
@@ -189,6 +262,10 @@ footer p {
 
     .dropdown-menu > li > a {
         padding-left: 10px;
+    }
+
+    .appearance-btn--navbar-expand {
+        display: none;
     }
 }
 
@@ -203,14 +280,15 @@ footer p {
 
 .navbar {
     padding: 0;
+    transition: background-color 0.5s ease, border-bottom 0.5s ease;
 }
 
 .nav-link {
     font-weight: 900;
 }
 
-.bg-light {
-    background-color: white !important;
+.bg-white {
+    background-color: white;
 }
 
 .dropdown-menu {
@@ -219,7 +297,7 @@ footer p {
 }
 
 .dropdown-menu a:active {
-    background-color: var(--lightgray); /* Màu nền khi click */
+    background-color: var(--light-gray); /* Màu nền khi click */
 }
 
 .img-fluid {
@@ -227,6 +305,7 @@ footer p {
     object-fit: cover;
 }
 
+.more-link:hover,
 .link-secondary:hover {
     text-decoration: underline;
     text-decoration-thickness: 1px;

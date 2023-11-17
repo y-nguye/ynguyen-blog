@@ -4,7 +4,7 @@
 </div>
 </main>
 
-<footer class="mt-4 border-top bg-light">
+<footer class="footer border-top appearance">
     <div class="container-sm">
         <div class="row">
             <div class="col-md-8">
