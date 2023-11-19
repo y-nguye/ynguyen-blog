@@ -6,12 +6,18 @@ $category_name_to_check = single_cat_title('', false);
 $child_categories       = has_child_category_by_name($category_name_to_check);
 ?>
 
+
+
 <?php if (is_category()) : ?>
     <?php if ($child_categories) : ?>
-        <h1 class="mt-4">Các bài viết về <?php echo single_cat_title(); ?></h1>
+        <h1 class="mt-4"><b>Chuyên mục <?php echo single_cat_title(); ?></b></h1>
     <?php else : ?>
-        <h1 class="mt-4"><?php echo single_cat_title(); ?></h1>
+        <h1 class="mt-4"><b><?php echo single_cat_title(); ?></b></h1>
     <?php endif; ?>
+<?php endif; ?>
+
+<?php if (is_tag()) : ?>
+    <h1 class="mt-4 text-muted"><b>#<?php echo single_cat_title(); ?></b></h1>
 <?php endif; ?>
 
 <?php if (category_description()) : ?>

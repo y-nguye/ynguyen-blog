@@ -107,6 +107,16 @@ function add_custom_comment_fields_classes($fields)
     return $fields;
 }
 
+function custom_tag_cloud_data($tags_data)
+{
+    foreach ($tags_data as $key => $tag) {
+        $tags_data[$key]['name'] = '#' . $tag['name'];
+    }
+    return $tags_data;
+}
+
+add_filter('wp_generate_tag_cloud_data', 'custom_tag_cloud_data');
+
 
 function has_child_category_by_name($category_name)
 {

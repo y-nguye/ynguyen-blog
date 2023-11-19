@@ -16,7 +16,7 @@ function darkTheme() {
             x.classList.add('dark-mode');
         });
         appearanceBtn.forEach(function (x) {
-            x.innerHTML = `<i class="bi bi-sun-fill align-middle"></i>`;
+            x.innerHTML = `<i class="bi bi-sun align-middle"></i>`;
         });
     } else {
         appearanceBtn.forEach(function (x) {
@@ -35,7 +35,7 @@ function darkTheme() {
 
                 if (localStorage.getItem('theme') === 'dark') {
                     appearanceBtn.forEach(function (x) {
-                        x.innerHTML = `<i class="bi bi-sun-fill align-middle"></i>`;
+                        x.innerHTML = `<i class="bi bi-sun align-middle"></i>`;
                     });
                 } else {
                     appearanceBtn.forEach(function (x) {
