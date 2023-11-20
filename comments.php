@@ -22,18 +22,14 @@
                     'title_reply' => 'Bình luận',
                     'title_reply_after' => '</h2>',
 
-                    'comment_notes_before' => '',
-                    'comment_notes_after' => '',
-
                     'comment_field' => '<div class="form-group pb-4"><textarea name="comment" id="comment" cols="20" rows="5" class="form-control"></textarea></div>',
                     'comment_field_before' => '<div class="form-group">',
                     'comment_field_after' => '</div>',
                     'fields' => [
-                        'author' => '<div class="row mb-3"><div class="col-md-4"><input class="form-control mb-2" placeholder="Tên *"></div>',
-                        'email' => '<div class="col-md-4"><input class="form-control mb-2" placeholder="Email *"></div>',
-                        'url' => '<div class="col-md-4"><input class="form-control mb-2" placeholder="Trang web"></div></div>',
+                        'author' => '<div class="row mb-3"><div class="col-md-4"><input class="form-control mb-2" placeholder="Tên *" id="author" name="author" type="text" value="" size="30" maxlength="245" autocomplete="name" required="required"></div>',
+                        'email' => '<div class="col-md-4"><input class="form-control mb-2" placeholder="Email *" id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required="required"></div>',
+                        'url' => '<div class="col-md-4"><input class="form-control mb-2" placeholder="Trang web" id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></div></div>',
                     ],
-
                     'cancel_reply_before' => '<div class="fs-5 mt-2">',
                     'cancel_reply_after' => '</div>',
 

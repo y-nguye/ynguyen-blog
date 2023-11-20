@@ -21,6 +21,8 @@
             'smallest' => 1.25,  // Kích thước nhỏ nhất của thẻ
             'largest' => 1,   // Kích thước lớn nhất của thẻ
             'unit' => 'rem',    // Đơn vị kích thước
+            'order' => 'DESC',
+            'orderby' => 'count',
         ]);
         ?>
     </div>

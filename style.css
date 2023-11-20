@@ -42,7 +42,7 @@ Author URI: https://www.facebook.com/profile.php?id=100008423531575
     --light-gray: #dee2e67c;
     --dark: #1c2128;
     --dark-gray: #2d333b;
-    --dark-gray-light: #545e69;
+    --dark-gray-light: #464f5a;
 
     --text-light: #1d2327;
     --text-light-gray: #808080;
@@ -152,19 +152,26 @@ hr {
     transition: background-color 0.5s ease;
     background-color: var(--light);
 }
-.comment-form-cookies-consent {
-    font-size: 1rem;
-}
 .comment-respond {
     border-top: 1px solid var(--light-gray);
 }
 .comment-respond input,
 .comment-respond textarea {
+    font-weight: 500;
     transition: background-color 0.5s ease, border 0.5s ease;
+}
+.comment-respond textarea {
+    font-size: 1.5rem;
 }
 .comment-respond a:hover {
     text-decoration: underline;
     text-decoration-thickness: 1px;
+}
+.comment-content[aria-live='polite'] {
+    /* Thêm các quy tắc CSS của bạn cho nội dung bình luận đang chờ kiểm duyệt ở đây */
+    color: #ff0000; /* Ví dụ: đổi màu chữ thành đỏ */
+    font-weight: bold; /* Ví dụ: làm đậm văn bản */
+    /* ... Thêm các quy tắc CSS khác tùy ý ... */
 }
 
 /* Sidebar */
@@ -269,10 +276,13 @@ footer p {
     color: var(--text-dark);
     background-color: var(--dark-gray-light);
 }
-.dark-mode .comment-respond input {
+.dark-mode .comment-respond input:not(.btn) {
     border: 1px solid var(--dark-gray-light);
     color: var(--text-dark);
     background-color: var(--dark-gray-light);
+}
+.dark-mode .form-check-input:checked {
+    background-color: var(--blue) !important;
 }
 .dark-mode .comment-respond input::placeholder {
     color: var(--text-dark);

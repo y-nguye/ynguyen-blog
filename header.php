@@ -40,7 +40,7 @@
                             'menu' => 'primary',
                             'container' => '',
                             'theme_location' => 'primary',
-                            'items_wrap' => '<ul class="navbar-nav w-100 mb-2 mb-lg-0">%3$s</ul>',
+                            'items_wrap' => '<ul class="navbar-nav mb-2 mb-lg-0">%3$s</ul>',
                         ]
                     )
                     ?>
