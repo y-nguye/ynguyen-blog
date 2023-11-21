@@ -30,7 +30,7 @@
                         'email' => '<div class="col-md-4"><input class="form-control mb-2" placeholder="Email *" id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" autocomplete="email" required="required"></div>',
                         'url' => '<div class="col-md-4"><input class="form-control mb-2" placeholder="Trang web" id="url" name="url" type="text" value="" size="30" maxlength="200" autocomplete="url"></div></div>',
                     ],
-                    'cancel_reply_before' => '<div class="fs-5 mt-2">',
+                    'cancel_reply_before' => '<div class="mt-2">',
                     'cancel_reply_after' => '</div>',
 
                     'label_submit' => 'Gửi bình luận',

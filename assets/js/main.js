@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     header();
     sidebar();
     darkTheme();
+    backToTop();
 
     const tags = document.querySelectorAll('.tag');
     tags.forEach(function (tag) {

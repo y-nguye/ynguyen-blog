@@ -11,8 +11,8 @@ Author URI: https://www.facebook.com/profile.php?id=100008423531575
 @media (min-width: 768px) {
     .nguyen-y,
     .footer-widget {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
     }
     .nguyen-y {
         text-align: right;
@@ -25,21 +25,23 @@ Author URI: https://www.facebook.com/profile.php?id=100008423531575
     }
 
     .footer-widget {
-        padding-top: 10px;
+        padding-top: 0.625rem;
         padding-bottom: 5px;
     }
     .nguyen-y {
-        padding-bottom: 10px;
+        padding-bottom: 0.625rem;
+        justify-content: start !important;
     }
 }
 
 :root {
-    --font-family: 'Cormorant', serif;
+    --font-family: 'Noto Serif', serif;
 
     --blue: #007bff;
     --white: #fff;
     --light: #f5f5f5;
     --light-gray: #dee2e67c;
+    --light-gray-hover: #bdc1c770;
     --dark: #1c2128;
     --dark-gray: #2d333b;
     --dark-gray-light: #464f5a;
@@ -52,8 +54,14 @@ Author URI: https://www.facebook.com/profile.php?id=100008423531575
     --text-dark-hover: #dce7f3;
 }
 
+html {
+    /* Sử dụng đơn vị REM (Root EM) */
+    font-size: 16px;
+}
+
 body {
     font-family: var(--font-family);
+    font-size: 1rem;
 
     display: none;
     /* Đảy footer xuống dưới cùng */
@@ -74,6 +82,10 @@ a {
 
 hr {
     color: var(--dark-gray-light);
+}
+
+h1 {
+    margin-bottom: 0.5rem;
 }
 
 .logo {
@@ -101,6 +113,7 @@ hr {
 }
 
 .meta {
+    font-size: 0.75rem;
     color: var(--text-light-gray);
 }
 .meta span {
@@ -111,7 +124,8 @@ hr {
     color: var(--text-light-gray);
 }
 .meta .tag {
-    padding: 0 0.5em;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.1875rem;
     border-radius: 5px;
     background-color: var(--light-gray);
     transition: background-color 0.5s ease;
@@ -120,6 +134,9 @@ hr {
 .meta .tag:hover a {
     color: var(--text-light-hover);
     cursor: pointer;
+}
+.meta .dot-comments-info {
+    display: inline;
 }
 
 /* Comment */
@@ -140,15 +157,15 @@ hr {
     border-radius: 50%;
 }
 .comment-meta {
-    font-size: 1rem;
-    padding-bottom: 0.5rem;
+    font-size: 0.75rem;
+    padding-bottom: 0.75rem;
 }
 .comment-meta > a {
     color: var(--text-light-gray);
 }
 .comment > p {
-    padding: 16px;
-    border-radius: 10px;
+    padding: 1rem;
+    border-radius: 0.875rem;
     transition: background-color 0.5s ease;
     background-color: var(--light);
 }
@@ -160,18 +177,14 @@ hr {
     font-weight: 500;
     transition: background-color 0.5s ease, border 0.5s ease;
 }
-.comment-respond textarea {
-    font-size: 1.5rem;
+.comment-respond input::placeholder {
+    font-size: 0.75rem;
+    color: var(--text-light-gray);
 }
 .comment-respond a:hover {
+    font-size: 0.75rem;
     text-decoration: underline;
     text-decoration-thickness: 1px;
-}
-.comment-content[aria-live='polite'] {
-    /* Thêm các quy tắc CSS của bạn cho nội dung bình luận đang chờ kiểm duyệt ở đây */
-    color: #ff0000; /* Ví dụ: đổi màu chữ thành đỏ */
-    font-weight: bold; /* Ví dụ: làm đậm văn bản */
-    /* ... Thêm các quy tắc CSS khác tùy ý ... */
 }
 
 /* Sidebar */
@@ -180,6 +193,9 @@ hr {
 }
 .sidebar input {
     transition: background-color 0.5s ease;
+}
+.sidebar > div > .cat-item {
+    margin-bottom: 0.5rem;
 }
 .sidebar .tag-cloud-link {
     font-weight: 500;
@@ -197,11 +213,21 @@ hr {
 }
 
 footer {
-    background-color: var(--light-gray);
+    font-size: 0.75rem;
     transition: background-color 0.5s ease, border-top 0.5s ease;
+    background-color: var(--light-gray);
+}
+footer .nguyen-y {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: end;
 }
 footer p {
     margin: 0;
+}
+.container-back-to-top-btn {
+    transform: translateY(100%);
 }
 
 /* ---------- Dark-mode ---------- */
@@ -209,7 +235,9 @@ footer p {
 .appearance-btn:active {
     border: 0px;
 }
-
+.appearance-btn--navbar-expand {
+    height: 100%;
+}
 .dark-mode {
     background-color: var(--dark);
 }
@@ -344,18 +372,17 @@ footer p {
 
 /* Khi NavBar thu gọn */
 @media (max-width: 991px) {
-    .navbar {
-        font-size: 30px;
+    .navbar a {
+        font-size: 1.25rem;
     }
     .navbar ul a {
-        font-size: 20px;
-        font-weight: 600;
+        font-size: 1rem;
     }
     .navbar-toggler-appearance-btn {
-        font-size: 20px;
+        font-size: 1.125rem;
     }
     .navbar-toggler-btn {
-        font-size: 30px;
+        font-size: 1.875rem;
     }
 
     .dropdown > .nav-link,
@@ -364,11 +391,11 @@ footer p {
     }
 
     .dropdown-toggle-split {
-        padding-left: 10px;
+        padding-left: 0.625rem;
     }
 
     .dropdown-menu > li > a {
-        padding-left: 10px;
+        padding-left: 0.625rem;
     }
 
     .appearance-btn--navbar-expand {
@@ -386,14 +413,14 @@ footer p {
 }
 
 .navbar {
+    font-weight: 500;
     padding: 0;
     transition: background-color 0.5s ease, border-bottom 0.5s ease;
 }
-
 .nav-link {
-    font-weight: 900;
+    font-size: 0.875rem;
+    padding: 0.75rem 0;
 }
-
 .bg-white {
     background-color: white;
 }

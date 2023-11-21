@@ -17,14 +17,14 @@ $child_categories       = has_child_category_by_name($category_name_to_check);
 <?php endif; ?>
 
 <?php if (is_tag()) : ?>
-    <h1 class="mt-4 text-muted"><b>#<?php echo single_cat_title(); ?></b></h1>
+    <h1 class="mt-4"><b>#<?php echo single_cat_title(); ?></b></h1>
 <?php endif; ?>
 
 <?php if (category_description()) : ?>
-    <div class="fs-5"><?php echo category_description(); ?></div>
+    <div class=""><?php echo category_description(); ?></div>
 <?php endif; ?>
 
-<article class="content fs-5">
+<article class="content">
     <?php if (have_posts()) :
         while (have_posts()) : ?>
             <?php the_post(); ?>

@@ -29,10 +29,11 @@ add_action('wp_enqueue_scripts', 'y_register_styles');
 function y_register_styles()
 {
     $version = wp_get_theme()->get('Version');
-    wp_enqueue_style('y-style', get_template_directory_uri() . "/style.css", array('y-bootstrap'), $version, 'all'); // array: ghi đè (override) y-bootstrap
+    wp_enqueue_style('y-style', get_template_directory_uri() . "/style.css", array('y-normalize'), $version, 'all');
+    wp_enqueue_style('y-normalize',  get_template_directory_uri() . "/assets/css/normalize.css", array('y-bootstrap'), '', 'all'); // array: ghi đè (override) y-bootstrap
     wp_enqueue_style('y-bootstrap', "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css", array(), '5.3.2', 'all');
-    wp_enqueue_style('y-bootstrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css", array(), '1.11.1', 'all');
-    wp_enqueue_style('y-bootstrap-gg-font', "https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap", array(), '', 'all');
+    wp_enqueue_style('y-bootstrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css", array(), '', 'all');
+    wp_enqueue_style('y-bootstrap-gg-font', "https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap", array(), '', 'all');
 }
 
 
@@ -46,6 +47,7 @@ function y_register_scripts()
     wp_enqueue_script('y-header', get_template_directory_uri() . "/assets/js/header.js", array('y-main'), $version, 'all');
     wp_enqueue_script('y-sidebar', get_template_directory_uri() . "/assets/js/sidebar.js", array('y-main'), $version, 'all');
     wp_enqueue_script('y-dark-theme', get_template_directory_uri() . "/assets/js/darkTheme.js", array('y-main'), $version, 'all');
+    wp_enqueue_script('y-back-top-top', get_template_directory_uri() . "/assets/js/backToTop.js", array('y-main'), $version, 'all');
 }
 
 

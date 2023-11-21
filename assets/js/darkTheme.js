@@ -3,12 +3,12 @@ function darkTheme() {
 
     if (navbarNav) {
         // Thêm vào sau khi đã nhận được thẻ ul:navbar-nav
-        navbarNav.innerHTML += `<li class="ms-auto mt-auto">
-                                <button type="button"
+        navbarNav.innerHTML += `<li class="nav-item ms-auto">
+                                    <button type="button"
                                         class="btn appearance-btn appearance-btn--navbar-expand"
                                         title="Chuyển đổi giao diện"
-                                </button>
-                            </li>`;
+                                    </button>
+                                </li>`;
 
         const appearance = document.querySelectorAll('.appearance');
         const appearanceBtn = document.querySelectorAll('.appearance-btn');

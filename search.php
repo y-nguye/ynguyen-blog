@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<article class="content fs-5">
+<article class="content">
 
     <header class="mt-4">
         <h1>

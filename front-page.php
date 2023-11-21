@@ -4,7 +4,7 @@
     <?php dynamic_sidebar('home-page-title-widget'); ?>
 </div>
 
-<article class="content fs-5">
+<article class="content">
     <?php
     if (have_posts()) :
 

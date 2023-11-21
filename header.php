@@ -9,7 +9,7 @@
 
 <body>
     <main class="pb-4 appearance">
-        <nav class="navbar navbar-expand-lg sticky-top bg-white border-bottom">
+        <nav id="back-to-top" class="navbar navbar-expand-lg sticky-top bg-white border-bottom">
             <div class="container-sm">
                 <?php
                 if (function_exists('the_custom_logo')) {
@@ -40,7 +40,7 @@
                             'menu' => 'primary',
                             'container' => '',
                             'theme_location' => 'primary',
-                            'items_wrap' => '<ul class="navbar-nav mb-2 mb-lg-0">%3$s</ul>',
+                            'items_wrap' => '<ul class="navbar-nav mb-2 mb-lg-0 w-100">%3$s</ul>',
                         ]
                     )
                     ?>
