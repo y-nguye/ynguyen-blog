@@ -279,7 +279,7 @@ footer p {
     color: var(--text-dark);
 }
 .dark-mode .meta .tag {
-    background-color: var(--dark-gray-light);
+    background-color: var(--dark-gray);
 }
 .dark-mode .meta .tag:hover,
 .dark-mode .meta .tag:hover a {

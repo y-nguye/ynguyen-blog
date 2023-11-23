@@ -18,9 +18,9 @@
                     'class_form' => '',
                     'logged_in_as' => '',
 
-                    'title_reply_before' => '<h2 class="pt-3">',
+                    'title_reply_before' => '<h3 class="pt-3">',
                     'title_reply' => 'Bình luận',
-                    'title_reply_after' => '</h2>',
+                    'title_reply_after' => '</h3>',
 
                     'comment_field' => '<div class="form-group pb-4"><textarea name="comment" id="comment" cols="20" rows="5" class="form-control"></textarea></div>',
                     'comment_field_before' => '<div class="form-group">',
