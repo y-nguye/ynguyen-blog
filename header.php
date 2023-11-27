@@ -9,7 +9,7 @@
 
 <body class="appearance">
     <main class="pb-4">
-        <nav id="back-to-top" class="navbar navbar-expand-lg sticky-top bg-white border-bottom">
+        <nav id="back-to-top" class="navbar navbar-expand-lg fixed-top bg-white border-bottom">
             <div class="container-sm">
                 <?php
                 if (function_exists('the_custom_logo')) {
@@ -48,6 +48,6 @@
             </div>
         </nav>
 
-        <div class="container-sm">
+        <div class="container-sm mt-5">
             <div class="row">
                 <div class="col-md-8">
