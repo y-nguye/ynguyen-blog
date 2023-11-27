@@ -1,7 +1,7 @@
 /* 
 Theme Name: ynguyen-blog
 Text Domain
-Version: 1.1
+Version: 1.2
 Description: Giao diện tự tạo của tôi
 Tags: simple, right-sidebar, responsive
 Author: Nguyễn Hoài Ý
@@ -68,6 +68,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    transition: background-color 0.5s ease;
 }
 
 main {
@@ -86,10 +87,12 @@ hr {
 
 h1 {
     margin-bottom: 0.5rem;
+    transition: color 0.5s ease;
 }
 
 p {
     line-height: 1.75rem;
+    transition: color 0.5s ease;
 }
 
 .logo {
@@ -201,6 +204,9 @@ p {
 .sidebar > div > .cat-item {
     margin-bottom: 0.5rem;
 }
+.sidebar .tags {
+    transition: color 0.5s ease;
+}
 .sidebar .tag-cloud-link {
     font-weight: 500;
     display: inline-block;
@@ -226,6 +232,7 @@ footer .nguyen-y {
     height: 100%;
     align-items: center;
     justify-content: end;
+    transition: color 0.5s ease;
 }
 footer p {
     margin: 0;
@@ -246,6 +253,7 @@ footer p {
     background-color: var(--dark);
 }
 
+.dark-mode main,
 .dark-mode h1,
 .dark-mode ol,
 .dark-mode p,

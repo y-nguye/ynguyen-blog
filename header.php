@@ -7,8 +7,8 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
-    <main class="pb-4 appearance">
+<body class="appearance">
+    <main class="pb-4">
         <nav id="back-to-top" class="navbar navbar-expand-lg sticky-top bg-white border-bottom">
             <div class="container-sm">
                 <?php

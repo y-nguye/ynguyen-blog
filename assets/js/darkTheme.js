@@ -31,7 +31,7 @@ function darkTheme() {
                 appearance.forEach(function (x) {
                     x.classList.toggle('dark-mode');
                     const isDarkMode = document
-                        .querySelector('main')
+                        .querySelector('body')
                         .classList.contains('dark-mode');
                     localStorage.setItem(
                         'theme',
