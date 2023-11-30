@@ -124,7 +124,7 @@ p {
 .contents img {
     border-radius: 8px;
 }
-.contents :nth-child(n) {
+.contents :nth-child(n):not(hr) {
     text-align: justify;
 }
 
