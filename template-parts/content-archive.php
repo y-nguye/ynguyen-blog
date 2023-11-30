@@ -14,6 +14,6 @@
         <div class="intro">
             <?php the_excerpt(); ?>
         </div>
-        <a href="<?php the_permalink(); ?>" class="d-inline-block mb-2 more-link link-primary">Đọc tiếp &rarr;</a>
+        <a href="<?php the_permalink(); ?>" class="d-inline-block text-decoration-none mb-2 more-link link-primary">Đọc tiếp &rarr;</a>
     </div>
 </div>
