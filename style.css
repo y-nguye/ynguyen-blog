@@ -436,7 +436,6 @@ footer p {
     border: 0px;
 }
 
-.dropdown-menu a:focus,
 .navbar-toggler:focus {
     box-shadow: none;
 }
@@ -459,6 +458,7 @@ footer p {
     overflow: hidden;
 }
 
+.dropdown-menu a:focus,
 .dropdown-menu a:active {
     background-color: var(--light-gray); /* Màu nền khi click */
 }
