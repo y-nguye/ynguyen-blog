@@ -436,6 +436,7 @@ footer p {
     border: 0px;
 }
 
+.dropdown-menu a:focus,
 .navbar-toggler:focus {
     box-shadow: none;
 }
